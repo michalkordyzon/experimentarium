@@ -2,8 +2,9 @@
 name: "Michał — Papers & Experiments"
 title: "Papers & Experiments"
 description: "Summaries of research papers and my reproducible experiments"
-url: "https://<your-username>.github.io"
-baseurl: ""  # if using <username>.github.io leave empty
+url: "https://michalkordyzon.github.io"
+baseurl: "/experimentarium"
+
 
 # Theme & plugins (GitHub Pages–compatible)
 theme: minima
