@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<section class="hero">
+  <h1>{{ site.title }}</h1>
+  <p>{{ site.description }}</p>
+  <input id="search" type="search" placeholder="Search title, tag, author…" />
+</section>
+
+<h2 id="papers">Papers</h2>
+<div id="papers-list" class="card-grid">
+  {% assign all_papers = site.papers | sort: 'date' | reverse %}
+  {% for post in all_papers %}
+    {% include card.html item=post %}
+  {% endfor %}
+</div>
+
+<h2 id="experiments">Experiments</h2>
+<div id="experiments-list" class="card-grid">
+  {% assign all_exps = site.experiments | sort: 'date' | reverse %}
+  {% for post in all_exps %}
+    {% include card.html item=post %}
+  {% endfor %}
+</div>

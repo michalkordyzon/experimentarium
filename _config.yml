@@ -1,0 +1,52 @@
+# Site settings
+name: "Michał — Papers & Experiments"
+title: "Papers & Experiments"
+description: "Summaries of research papers and my reproducible experiments"
+url: "https://<your-username>.github.io"
+baseurl: ""  # if using <username>.github.io leave empty
+
+# Theme & plugins (GitHub Pages–compatible)
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Collections for typed content
+collections:
+  papers:
+    output: true
+    permalink: /papers/:name/
+  experiments:
+    output: true
+    permalink: /experiments/:name/
+
+# Defaults for front matter
+defaults:
+  - scope: { path: "", type: "papers" }
+    values:
+      layout: item
+      item_type: paper
+  - scope: { path: "", type: "experiments" }
+    values:
+      layout: item
+      item_type: experiment
+  - scope: { path: "" }
+    values:
+      layout: default
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+
+# Custom vars
+nav:
+  - title: Home
+    url: /
+  - title: Papers
+    url: /#papers
+  - title: Experiments
+    url: /#experiments
+  - title: About
+    url: /about

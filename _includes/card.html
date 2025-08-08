@@ -1,0 +1,9 @@
+<article class="card" data-index="{{ include.item.title | downcase }} {{ include.item.tags | join: ' ' | downcase }} {{ include.item.authors | downcase }}">
+  <h3><a href="{{ include.item.url | relative_url }}">{{ include.item.title }}</a></h3>
+  {% if include.item.tldr %}<p class="muted">{{ include.item.tldr }}</p>{% endif %}
+  <div class="muted small">
+    {% if include.item.year %}{{ include.item.year }} · {% endif %}
+    {% if include.item.venue %}{{ include.item.venue }} · {% endif %}
+    {% if include.item.tags %}{{ include.item.tags | join: ', ' }}{% endif %}
+  </div>
+</article>

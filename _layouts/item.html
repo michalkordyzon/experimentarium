@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {%- seo -%}
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+  </head>
+  <body>
+    {% include navbar.html %}
+    <main class="container">
+      <article class="item">
+        <h1>{{ page.title }}</h1>
+        {% if page.tldr %}<p class="tldr"><strong>TL;DR:</strong> {{ page.tldr }}</p>{% endif %}
+
+        <div class="meta">
+          {% if page.authors %}<span>👤 {{ page.authors }}</span>{% endif %}
+          {% if page.venue %}<span>🏛️ {{ page.venue }} ({{ page.year }})</span>{% endif %}
+          {% if page.tags %}<span>🏷️ {{ page.tags | join: ', ' }}</span>{% endif %}
+          {% if page.status %}<span>✅ {{ page.status }}</span>{% endif %}
+        </div>
+
+        <div class="links">
+          {% if page.pdf %}<a href="{{ page.pdf }}" target="_blank">PDF</a>{% endif %}
+          {% if page.code %}<a href="{{ page.code }}" target="_blank">Code</a>{% endif %}
+          {% if page.dataset %}<a href="{{ page.dataset }}" target="_blank">Dataset</a>{% endif %}
+        </div>
+
+        {{ content }}
+
+        {% if page.bibtex %}
+        <h3>Cite</h3>
+        <pre><code>{{ page.bibtex | escape }}</code></pre>
+        {% endif %}
+      </article>
+    </main>
+    {% include footer.html %}
+  </body>
+</html>
